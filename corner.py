@@ -1,8 +1,10 @@
 import cv2
-import numpy as np
-import matplotlib
-matplotlib.use('Qt5Agg')  # Set Matplotlib to use the Qt5 backend
 from matplotlib import pyplot as plt
+
+"""
+Plot the first frame of a video.
+Enable manual extraction of the (x, y) coordinate of the four corners of Region of Interest
+"""
 
 def get_corner(video_path):
     # Open the video
@@ -24,5 +26,5 @@ def get_corner(video_path):
 
     cap.release()
 
-path = '/Users/terekli/Desktop/video2num/data/g15_long/g15_100psi.mp4'
+path = ''
 get_corner(path)

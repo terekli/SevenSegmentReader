@@ -53,6 +53,6 @@ def video2frame(input_path, output_path):
             break
 ######################################## END OF video2frame ########################################
 
-input_path = '/Users/terekli/Desktop/video2num/trimmed/14g_20psi.mov'
+input_path = '/Users/terekli/Desktop/video2num/'
 output_path = '/Users/terekli/Desktop/video2num/dump/'
 video2frame(input_path, output_path)

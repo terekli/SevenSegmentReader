@@ -18,5 +18,7 @@ The output of the code is shown below with excellent accuracy. Most importantly,
 4. Contours of all objects are calcualted, and region of the image with small contours are removed to reduce noise and neglect decimal point.
 5. Bounding boxes of all contours are obtained, and merged according to overlap in x-coordinate. This efficienctly extract each single digit as a binary map.
 6. Each binary map is scaled to 50 * 50 pixels to ensure consistently as shown below.
-   ~[binary_map](/binary_map.png)
+   ![binary_map](/binary_map.png)
+7. A total of 30 images in "train" are used to train a SVM model to identify binary maps.
+8. The predicted values are processed into the final output to match the balance display reading.
 

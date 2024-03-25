@@ -8,13 +8,14 @@ When working on my PhD thesis, I needed to measure and record the change in mass
 I wanted the code to be extremely efficient in terms of speed with reasonable accuracy, as I have large amount of video files to process.
 
 ## Performanc Evaluation
-
-
+The output of the code is shown below with excellent accuracy. Most importantly, its speed is 120 times faster than counterpart using CNN.
+![demo](/output.png)
 
 # Processing Pipeline
 1. The user manually records the corner (x, y) coordinates of the Region of Interest.
 2. Four point transform is performed on each frame of the video followed by scaling to 100 pixels in height.
 3. After transforming to gray scale, aggresive adaptive thresholding to applied to convert the image to binary while minimizing the effect of refleciton and shadow.
 4. Contours of all objects are calcualted, and region of the image with small contours are removed to reduce noise and neglect decimal point.
-5. 
+5. Bounding boxes of all contours are obtained, and merged according to overlap in x-coordinate. This efficienctly extract each single digit as a binary map.
+6. Each binary map is scaled to 50 * 50 pixels to ensure consistently.
 

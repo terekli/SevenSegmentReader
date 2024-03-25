@@ -17,5 +17,6 @@ The output of the code is shown below with excellent accuracy. Most importantly,
 3. After transforming to gray scale, aggresive adaptive thresholding to applied to convert the image to binary while minimizing the effect of refleciton and shadow.
 4. Contours of all objects are calcualted, and region of the image with small contours are removed to reduce noise and neglect decimal point.
 5. Bounding boxes of all contours are obtained, and merged according to overlap in x-coordinate. This efficienctly extract each single digit as a binary map.
-6. Each binary map is scaled to 50 * 50 pixels to ensure consistently.
+6. Each binary map is scaled to 50 * 50 pixels to ensure consistently as shown below.
+   ~[binary_map](/binary_map.png)
 

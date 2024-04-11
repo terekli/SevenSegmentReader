@@ -228,9 +228,17 @@ def video2res(input_path, roi, num_decimal_places):
         # Isoalte each digits
         digits = frame2digits(frame, roi, iframe)
 
-        # Temporary fix, if more than 5 digits are identified then skip this frame
-        if len(digits) > 5:
+       # Temporary fix, if each digit is not 50x50 then skip
+        skip_frame = 0
+        for element in digits:
+            if element.shape != (50, 50):
+                skip_frame = 1
+        if skip_frame == 1: 
             continue
+
+        # Temporary fix, if more than 5 digits are identified then skip this frame
+        if len(digits) != 5:
+            continue # Next frame
 
         # Make predictions
         val = digits2val(model, digits, num_decimal_places)
